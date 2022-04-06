@@ -20,17 +20,6 @@ class BookController extends Controller
         return view('content', compact('book', 'page'));
     }
 
-    // public function update(Book $book)
-    // {
-    //     $contentId = $book->contents[request()->page - 1]->id;
-    //     Mark::where('book_id', $book->id)->update([
-    //         'content_id' => $contentId,
-    //         'progress' => 20
-    //     ]);
 
-    //     // return redirect()->back();
-    //     return redirect(route('book.show', [ 'book' => $book->id]));
-    //     // return redirect()->action('BookController@show', ['book' => $book]);
-    // }
     
 }

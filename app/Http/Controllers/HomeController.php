@@ -36,15 +36,4 @@ class HomeController extends Controller
     }
 
 
-    // public function store($id)
-    // {
-    //     Mark::create([
-    //         'user_id' => Auth::user()->id,
-    //         'book_id' => $id,
-    //         'content_id' => null,
-    //         'progress' => 0
-    //     ]);
-    //     // dd($id);
-    //     return redirect(route('book.show', [ 'book' => $id, 'page' => 0]));
-    // }
 }

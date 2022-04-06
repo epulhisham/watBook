@@ -3,7 +3,9 @@
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\RecentlyReadController;
 use App\Models\Book;
 use App\Models\Content;
 use Illuminate\Support\Facades\Route;
@@ -26,18 +28,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/home/{id}', [App\Http\Controllers\HomeController::class, 'store'])->name('home.store');
-Route::get('/genre', [App\Http\Controllers\GenreController::class, 'index'])->name('genre');
-Route::get('/book', [App\Http\Controllers\BookController::class, 'index'])->name('book');
-Route::get('/recently_read', [App\Http\Controllers\RecentlyReadController::class, 'index'])->name('recently_read');
-
-
-
-
+Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+Route::get('/genre', [GenreController::class, 'index'])->name('genre.index');
+Route::get('/book', [BookController::class, 'index'])->name('book.index');
+Route::get('/recently_read', [RecentlyReadController::class, 'index'])->name('recently_read.index');
 Route::get('books/{book:id}/', [BookController::class, 'show'])->name('book.show');
-Route::get('genre/{genre:id}', [GenreController::class, 'show']);
-Route::get('authors/{authors:id}', [AuthorController::class, 'show']);
+Route::get('genre/{genre:id}', [GenreController::class, 'show'])->name('genre.show');
+Route::get('authors/{authors:id}', [AuthorController::class, 'show'])->name('author.show');
 
 
 
